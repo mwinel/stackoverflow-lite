@@ -1,4 +1,5 @@
-from flask import jsonify, request
+import json
+from flask import jsonify, request, make_response
 from app.main.questions import blueprint
 from app.models import Question
 
@@ -33,3 +34,7 @@ def add_question():
         'message': 'question successfully created'
     }), 201
 
+@blueprint.route('/questions', methods = ['GET'])
+def fetch_questions():
+    return make_response(json.dumps({'questions': questions})), 200, \
+        {'Content-Type': 'application/json'}
