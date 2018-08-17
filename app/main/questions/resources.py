@@ -38,3 +38,16 @@ def add_question():
 def fetch_questions():
     return make_response(json.dumps({'questions': questions})), 200, \
         {'Content-Type': 'application/json'}
+
+@blueprint.route('/questions/<int:question_id>', methods = ['GET'])
+def get_question(question_id):
+    for question in questions:
+        if question['id'] == question_id:            
+            resp = {
+                'id': question['id'],
+                'title': question['title'],
+                'body': question['body']
+            }
+            return make_response(json.dumps(resp)), 200, \
+                {'Content-Type': 'application/json'}
+    return jsonify({'message': 'question does not exist'}), 404
