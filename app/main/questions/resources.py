@@ -72,3 +72,11 @@ def update_question(question_id):
     question[0]["title"] = request.json.get("title", question[0]["title"])
     question[0]['body'] = request.json.get('body', question[0]['body'])
     return jsonify({'message': 'question successfully updated'}), 200
+
+@blueprint.route('/questions/<int:question_id>', methods = ['DELETE'])
+def delete_question(question_id):
+    question = [x for x in questions if x['id'] == question_id]
+    if not question:
+        return jsonify({'error': 'question does not exist'}), 404
+    questions.remove(question[0])
+    return jsonify({'message': 'question successfully deleted'}), 200
