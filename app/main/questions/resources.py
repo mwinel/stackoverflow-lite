@@ -51,3 +51,24 @@ def get_question(question_id):
             return make_response(json.dumps(resp)), 200, \
                 {'Content-Type': 'application/json'}
     return jsonify({'message': 'question does not exist'}), 404
+
+@blueprint.route('/questions/<int:question_id>', methods = ['PUT'])
+def update_question(question_id):
+    # Find and return a question matching a specific Id.
+    question = [x for x in questions if x['id'] == question_id]
+    # Set update conditions.
+    data = request.get_json()
+    title = data['title']
+    body = data['body']
+    if title.strip() == "":
+        return jsonify({'error': 'Title is missing'}), 400
+    if len(title.strip()) < 15:
+        return jsonify({'error': 'Title must be atleast 15 characters'}), 400
+    if body.strip() == "":
+        return jsonify({'error': 'Body is missing'}), 400
+    if len(body.strip()) < 30:
+        return jsonify({'error': 'Body must be atleast 15 characters'}), 400
+    # Update a question
+    question[0]["title"] = request.json.get("title", question[0]["title"])
+    question[0]['body'] = request.json.get('body', question[0]['body'])
+    return jsonify({'message': 'question successfully updated'}), 200
