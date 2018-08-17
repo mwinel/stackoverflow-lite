@@ -9,28 +9,26 @@ Clone the repo from GitHub:
 https://github.com/mwinel/stackoverflow-lite.git
 ```
 
-## Create and activate virtualenv
+Create and activate virtualenv
 
 ```
 python -m venv venv
 venv/Scripts/activate
 ```
 
-## Requirements
+Install necessary requirements
 
 ```
 pip install -r requirements
 ```
 
-## Run the Application
+Run the app and access the application at the address **http://localhost:5000/**
 
 ```
 python manage.py runserver
 ```
 
-Access the application at the address **http://localhost:5000/**
-
-## Running unit tests
+Run unit tests
 
 ```
 python manage.py tests
