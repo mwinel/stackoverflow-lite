@@ -24,7 +24,7 @@ class TestQuestionCase(BaseTestCase):
         self.assertIn("Something went wrong with PyQt5 menu: GUI", str(rv.data))
 
     def test_fetch_a_question(self):
-        """ Test API can fetch a question. """
+        """ Test API can fetch a question """
         rv = self.app.post('/api/v1/questions', data=json.dumps(self.question), 
             content_type='application/json')
         self.assertEqual(rv.status_code, 201)
@@ -34,6 +34,22 @@ class TestQuestionCase(BaseTestCase):
         # Test fetch for a non exiting question.
         resp = self.app.get('/api/v1/questions/30')
         self.assertEqual(resp.status_code, 404)
+
+    def test_update_a_question(self):
+        """ Test API can update a question """
+        rv = self.app.post('/api/v1/questions', data=json.dumps(self.question), 
+            content_type='application/json')
+        self.assertEqual(rv.status_code, 201)
+        self.question = {
+            "title": "Something went wrong with PyQt5 menu: GUI",
+            "body": "There were something wrong when I was using \
+                     PyQt5 to build a GUI window with a menu bar."
+        }
+        rv = self.app.put('/api/v1/questions/1', data=json.dumps(self.question), 
+            content_type='application/json')
+        self.assertEqual(rv.status_code, 200)
+        output = json.loads(rv.data)
+        self.assertTrue("question successfully updated" in output["message"])
 
 if __name__ == '__main__':
     unittest.main()
