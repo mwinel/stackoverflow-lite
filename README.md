@@ -1,6 +1,45 @@
 # stackoverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
+## Installation and Set Up
+
+Clone the repo from GitHub:
+
+```
+https://github.com/mwinel/stackoverflow-lite.git
+```
+
+## Create and activate virtualenv
+
+```
+python -m venv venv
+venv/Scripts/activate
+```
+
+## Requirements
+
+```
+pip install -r requirements
+```
+
+## Run the Application
+
+```
+python manage.py runserver
+```
+
+Access the application at the address **http://localhost:5000/**
+
+## Running unit tests
+
+```
+python manage.py tests
+```
+
+## Testing
+
+Test the resources in postman to see how they work.
+
 ## UI
 [Check out the project user interface](https://mwinel.github.io/stackoverflow-lite/UI/index.html)
 
