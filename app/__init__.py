@@ -10,4 +10,7 @@ def create_app(config_name):
     from app.main.index import blueprint as index_blueprint
     app.register_blueprint(index_blueprint, url_prefix='/api/v1')
 
+    from app.main.questions import blueprint as questions_blueprint
+    app.register_blueprint(questions_blueprint, url_prefix='/api/v1')
+
     return app
