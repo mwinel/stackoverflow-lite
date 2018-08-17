@@ -51,5 +51,18 @@ class TestQuestionCase(BaseTestCase):
         output = json.loads(rv.data)
         self.assertTrue("question successfully updated" in output["message"])
 
+    def test_delete_question(self):
+        """ Test API can update a question """
+        rv = self.app.post('/api/v1/questions', data=json.dumps(self.question2),
+            content_type='application/json')
+        self.assertEqual(rv.status_code, 201)
+        resp = self.app.delete('/api/v1/questions/2', data=json.dumps(self.question2),
+            content_type='application/json')
+        self.assertEqual(resp.status_code, 200)
+        # Test to see if it exists, should return a 404
+        result = self.app.get('/api/v1/questions/2', data=json.dumps(self.question2),
+            content_type='application/json')
+        self.assertEqual(result.status_code, 404)
+
 if __name__ == '__main__':
     unittest.main()
