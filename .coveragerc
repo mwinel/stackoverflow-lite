@@ -1,0 +1,25 @@
+# .coveragerc to control coverage.py
+[run]
+branch = True
+
+[report]
+omit = */click/*
+        */asyncio/*
+        */concurrent/*
+        */ctypes/*
+        */decimal.py
+        */encodings/*
+        */hmac.py
+        */html/*
+        */mimetypes.py
+        */flask/*
+        */itsdangerous.py
+        */jinja2/*
+        */markupsafe/*
+        */werkzeug/*
+        */colorama/*
+        */app/__init__.py*
+        *app/main/answers/__init__.py*
+        *app/main/index/__init__.py*
+        *app/main/questions/__init__.py*
+        */http/*
