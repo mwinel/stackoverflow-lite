@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mwinel/stackoverflow-lite.svg?branch=stackoverflow-lite-travis-ci)](https://travis-ci.org/mwinel/stackoverflow-lite)
+
 # stackoverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
