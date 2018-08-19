@@ -2,6 +2,8 @@ from flask import jsonify, request, abort
 
 # Initialize a questions list
 questions = []
+# Initialize the answers list
+answers = []
 
 # Define a class Question
 class Question:
@@ -46,3 +48,18 @@ class Question:
             if request.get("id") == question_id:
                 del questions[i]
                 break
+
+class Answer:
+
+    def __init__(self, id, body):
+        self.id = id
+        self.body = body
+
+    @staticmethod
+    def add():
+        answers = {
+            'id': id,
+            'body': request.json['body']
+        }
+        questions.append(answers)
+        
