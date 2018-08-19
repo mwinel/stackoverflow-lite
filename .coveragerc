@@ -22,4 +22,5 @@ omit = */click/*
         *app/main/answers/__init__.py*
         *app/main/index/__init__.py*
         *app/main/questions/__init__.py*
+        *app/tests*
         */http/*
