@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mwinel/stackoverflow-lite.svg?branch=stackoverflow-lite-travis-ci)](https://travis-ci.org/mwinel/stackoverflow-lite)  [![Coverage Status](https://coveralls.io/repos/github/mwinel/stackoverflow-lite/badge.svg?branch=master)](https://coveralls.io/github/mwinel/stackoverflow-lite?branch=master)  [![Maintainability](https://api.codeclimate.com/v1/badges/1eb372f598d4bfd45f3f/maintainability)](https://codeclimate.com/github/mwinel/stackoverflow-lite/maintainability)
+[![Build Status](https://travis-ci.org/mwinel/stackoverflow-lite.svg?branch=stackoverflow-lite-travis-ci)](https://travis-ci.org/mwinel/stackoverflow-lite)  [![Coverage Status](https://coveralls.io/repos/github/mwinel/stackoverflow-lite/badge.svg?branch=stackoverflow-lite-travis-ci)](https://coveralls.io/github/mwinel/stackoverflow-lite?branch=stackoverflow-lite-travis-ci)  [![Maintainability](https://api.codeclimate.com/v1/badges/1eb372f598d4bfd45f3f/maintainability)](https://codeclimate.com/github/mwinel/stackoverflow-lite/maintainability)
 
 # stackoverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
