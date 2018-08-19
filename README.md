@@ -3,7 +3,7 @@
 # stackoverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
-## Installation and Set Up
+### Installation and Set Up
 
 Clone the repo from GitHub:
 
@@ -37,20 +37,11 @@ Run unit tests
 python manage.py tests
 ```
 
-## Testing
+### Testing
 
 Test the resources in postman to see how they work.
 
-## Methods
-
-The API handles four HTTP requests
-
-- POST – Used to create the menus and meal options
-- GET – For retrieving one menus, meal options and orders using their ID's
-- PUT – For updating a menus and meal options given its ID
-- DELETE – For deleting a menus and meal options given its ID
-
-## API Endpoints
+### API Endpoints
 
 | Resource URL | Methods | Description | Requires Token |
 | -------- | ------------- | --------- |--------------- |
@@ -60,7 +51,7 @@ The API handles four HTTP requests
 | `/api/v1/questions/<questionId>` | `GET, PUT, DELETE` | Manipulate a single question | `FALSE` |
 | `/api/v1/questions/<questionId>/answers` | `POST` | Add answer | `FALSE` |
 
-## Sample Requests
+### Sample Requests
 
 Index
 ```
@@ -79,7 +70,7 @@ Server: Werkzeug/0.14.1 Python/3.6.5
 
 ```
 
-## UI
+### UI
 [Check out the project user interface](https://mwinel.github.io/stackoverflow-lite/UI/index.html)
 
 The UI has the following necessary pages as specified below.
