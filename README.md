@@ -53,7 +53,7 @@ Test the resources in postman to see how they work.
 
 ### Sample Requests
 
-Index
+Index;
 ```
 
 http GET http://localhost:5000/api/v1/index
