@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mwinel/stackoverflow-lite.svg?branch=stackoverflow-lite-travis-ci)](https://travis-ci.org/mwinel/stackoverflow-lite)
+[![Build Status](https://travis-ci.org/mwinel/stackoverflow-lite.svg?branch=stackoverflow-lite-travis-ci)](https://travis-ci.org/mwinel/stackoverflow-lite)  [![Coverage Status](https://coveralls.io/repos/github/mwinel/stackoverflow-lite/badge.svg?branch=master)](https://coveralls.io/github/mwinel/stackoverflow-lite?branch=master)
 
 # stackoverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
