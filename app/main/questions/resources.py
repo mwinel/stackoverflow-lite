@@ -3,8 +3,6 @@ from flask import jsonify, request, make_response
 from app.main.questions import blueprint
 from app.models import Question
 
-# Initialize a questions list
-questions = []
 
 @blueprint.route('/questions', methods = ['POST'])
 def add_question():
@@ -19,35 +17,24 @@ def add_question():
         return jsonify({'error': 'Body is missing'}), 400
     if len(body.strip()) < 30:
         return jsonify({'error': 'Body must be atleast 15 characters'}), 400
-    global id
-    if len(questions) == 0:
-        id = len(questions) + 1
-    else:
-        id = id + 1
-    question = {
-        'id': id,
-        'title': request.json['title'],
-        'body': request.json['body']
-    }
-    questions.append(question)
+    Question.add()
     return jsonify({
         'message': 'question successfully created'
     }), 201
 
+
 @blueprint.route('/questions', methods = ['GET'])
 def fetch_questions():
-    return make_response(json.dumps({'questions': questions})), 200, \
+    all_questions = Question.get_all()
+    return make_response(json.dumps({'questions': all_questions})), 200, \
         {'Content-Type': 'application/json'}
 
+
 @blueprint.route('/questions/<int:question_id>', methods = ['GET'])
-def get_question(question_id):
-    for question in questions:
-        if question['id'] == question_id:            
-            resp = {
-                'id': question['id'],
-                'title': question['title'],
-                'body': question['body']
-            }
-            return make_response(json.dumps(resp)), 200, \
-                {'Content-Type': 'application/json'}
+def fetch_question(question_id):
+    question = Question.get_one(question_id)
+    if question:
+        return make_response(json.dumps({'question': question})), 200, \
+            {'Content-Type': 'application/json'}
     return jsonify({'message': 'question does not exist'}), 404
+
