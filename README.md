@@ -8,7 +8,8 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 Clone the repo from GitHub:
 
 ```
-https://github.com/mwinel/stackoverflow-lite.git
+git clone https://github.com/mwinel/stackoverflow-lite.git
+cd stackoverflow-lite
 ```
 
 Create and activate virtualenv
@@ -39,6 +40,44 @@ python manage.py tests
 ## Testing
 
 Test the resources in postman to see how they work.
+
+## Methods
+
+The API handles four HTTP requests
+
+- POST – Used to create the menus and meal options
+- GET – For retrieving one menus, meal options and orders using their ID's
+- PUT – For updating a menus and meal options given its ID
+- DELETE – For deleting a menus and meal options given its ID
+
+## API Endpoints
+
+| Resource URL | Methods | Description | Requires Token |
+| -------- | ------------- | --------- |--------------- |
+| `/api/v1/` | `GET`  | The index | `FALSE` |
+| `/api/v1/index` | `GET`  | The index | `FALSE` |
+| `/api/v1/questions` | `GET, POST` | Add & Fetch questions | `FALSE` |
+| `/api/v1/questions/<questionId>` | `GET, PUT, DELETE` | Manipulate a single question | `FALSE` |
+| `/api/v1/questions/<questionId>/answers` | `POST` | Add answer | `FALSE` |
+
+## Sample Requests
+
+Index
+```
+
+http GET http://localhost:5000/api/v1/index
+
+HTTP/1.0 200 OK
+Content-Length: 85
+Content-Type: application/json
+Date: Sun, 19 August 2018 11:06:36 GMT
+Server: Werkzeug/0.14.1 Python/3.6.5
+
+{
+    "message": "Welcome to StackOverflow-Lite"
+}
+
+```
 
 ## UI
 [Check out the project user interface](https://mwinel.github.io/stackoverflow-lite/UI/index.html)
