@@ -5,11 +5,14 @@ python:
 # install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install coverage
+  - pip install pytest
+  - pip install pytest-cov
+  - pip install coveralls
 
 # command to run tests
 script: 
   - python manage.py tests
+  - pytest --cov app
 
 after_success:
   - coveralls
