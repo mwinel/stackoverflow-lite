@@ -13,4 +13,7 @@ def create_app(config_name):
     from app.main.questions import blueprint as questions_blueprint
     app.register_blueprint(questions_blueprint, url_prefix='/api/v1')
 
+    from app.main.answers import blueprint as answers_blueprint
+    app.register_blueprint(answers_blueprint, url_prefix='/api/v1')
+
     return app
