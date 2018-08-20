@@ -16,7 +16,7 @@ Create and activate virtualenv
 
 ```
 python -m venv venv
-venv/Scripts/activate
+venv\Scripts\activate
 ```
 
 Install necessary requirements
