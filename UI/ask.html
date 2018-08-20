@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300, 400, 700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html" id="brand">Stackoverflow Lite</a>
+                <a href="signup.html" id="menu">Sign Up</a>
+                <a href="login.html" id="menu">Login</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="page-content">
+        <div class="container">
+            <div class="questions">
+                <div class="right">
+                    <div class="ask">
+                        <h2>Ask a Question</h2>
+                        <label name="title"><b>Title</b></label>
+                        <input type="text" placeholder="What is your question. Try to be specific..." required>  
+                        <label name="body"><b>Body</b></label>
+                        <textarea name="textarea">Enter question here...</textarea> 
+                        <label name="tags"><b>Tags</b></label>
+                        <input type="text" name="ask" placeholder="atleast on tag search as python, sqlalchemy..., maximum 5" required>
+                        <button type="button" style="width: 30%; margin-top: 10px;">
+                            <a href="question.html">Post your Question</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Stackoverflow-lite, Copyright &copy; 2018</p>
+    </footer>
+</body>
+</html>
+
