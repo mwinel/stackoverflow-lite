@@ -1,4 +1,4 @@
-from flask import jsonify, request, abort
+from flask import jsonify, request
 
 # Initialize a questions list
 questions = []
@@ -48,6 +48,21 @@ class Question:
             if request.get("id") == question_id:
                 del questions[i]
                 break
+
+    @staticmethod
+    def verifications():
+        data = request.get_json()
+        title = data['title']
+        body = data['body']
+        if title.strip() == "":
+            return jsonify({'error': 'Title is missing'}), 400
+        if len(title.strip()) < 15:
+            return jsonify({'error': 'Title must be atleast 15 characters'}), 400
+        if body.strip() == "":
+            return jsonify({'error': 'Body is missing'}), 400
+        if len(body.strip()) < 30:
+            return jsonify({'error': 'Body must be atleast 15 characters'}), 400
+
 
 class Answer:
 
